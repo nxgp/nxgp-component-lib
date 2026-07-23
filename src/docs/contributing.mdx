@@ -1,0 +1,76 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Docs/Contributing" />
+
+# Contributing
+
+Thank you for helping improve `@nxgp/component-lib`.
+
+## Development setup
+
+```bash
+git clone <repo-url>
+cd component-kit
+pnpm install
+pnpm storybook    # http://localhost:6006
+pnpm test:watch
+```
+
+## Quality gates
+
+Before opening a PR, run:
+
+```bash
+pnpm lint && pnpm typecheck && pnpm test:coverage && pnpm build && pnpm build-storybook
+```
+
+Git hooks (Lefthook):
+
+| Hook | Command |
+|------|---------|
+| pre-commit | Biome on staged files |
+| pre-push | lint + typecheck + test:coverage |
+
+## Component blueprint
+
+Every new component needs:
+
+```
+src/components/<name>/
+  <name>.tsx
+  <name>.variants.ts      # CVA variants
+  <name>.stories.tsx      # Default + AllVariants/AllSizes/AllStates
+  <name>.test.tsx         # rendering, edge cases, interactions, a11y, reliability
+  index.ts
+```
+
+Rules:
+
+- Semantic design tokens only in TSX
+- `forwardRef` + `asChild` on interactive primitives
+- JSDoc on every export
+- ≥95% line coverage per component file
+
+See `docs/TESTING.md` and `CONTRIBUTING.md` for full standards.
+
+## Changesets
+
+User-facing changes require a changeset:
+
+```bash
+pnpm changeset
+```
+
+Choose the correct semver bump (breaking → major).
+
+## Releases
+
+Releases use [Changesets](https://github.com/changesets/changesets):
+
+1. Merge changesets to `main`
+2. GitHub Actions opens a Version Packages PR (or run `pnpm version-packages` locally)
+3. Publishing runs `pnpm release` to GitHub Packages
+
+See [docs/VERSIONING.md](docs/VERSIONING.md) for semver policy and `.npmrc.example` for registry auth.
+
+Full repo guide: `CONTRIBUTING.md` at the repository root.

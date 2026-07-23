@@ -1,0 +1,19 @@
+# Lefthook — git hooks for quality gates
+# https://github.com/evilmartians/lefthook
+
+pre-commit:
+  commands:
+    biome-staged:
+      glob: "*.{js,ts,jsx,tsx,json,css,mdc}"
+      run: pnpm exec biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  commands:
+    biome:
+      run: pnpm lint
+    typecheck:
+      run: pnpm typecheck
+    unit-tests:
+      run: pnpm test:coverage

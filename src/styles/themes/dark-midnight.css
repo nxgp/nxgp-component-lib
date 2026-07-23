@@ -1,0 +1,28 @@
+[data-theme="dark-midnight"] {
+  --app-bg: var(--primitive-indigo-950);
+  --app-fg: oklch(0.95 0.02 275);
+  --app-primary: var(--primitive-indigo-400);
+  --app-primary-fg: var(--primitive-indigo-950);
+  --app-muted: oklch(0.18 0.05 275);
+  --app-muted-fg: oklch(0.65 0.05 275);
+  --app-border: oklch(0.25 0.06 275);
+  --app-ring: var(--primitive-indigo-400);
+  --app-destructive: var(--primitive-red-600);
+  --app-destructive-fg: oklch(0.95 0.02 275);
+  --app-accent: oklch(0.18 0.05 275);
+  --app-accent-fg: oklch(0.95 0.02 275);
+  --app-chart-1: var(--primitive-indigo-400);
+  --app-chart-2: var(--primitive-teal-400);
+  --app-chart-3: var(--primitive-amber-500);
+  --app-chart-4: var(--primitive-blue-400);
+  --app-chart-5: var(--primitive-red-500);
+  --app-card: oklch(0.14 0.05 275);
+  --app-popover: oklch(0.12 0.05 275);
+  --app-canvas: oklch(0.1 0.05 275);
+  --app-surface-1: var(--app-bg);
+  --app-surface-2: var(--app-muted);
+  --app-surface-3: var(--app-card);
+  --app-chrome: oklch(0.11 0.05 275);
+  --app-border-strong: oklch(0.3 0.06 275);
+  --app-border-subtle: oklch(0.22 0.06 275);
+}

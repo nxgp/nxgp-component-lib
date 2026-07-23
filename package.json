@@ -1,0 +1,192 @@
+{
+  "name": "@nxgp/component-lib",
+  "version": "1.0.0",
+  "description": "Themeable, accessible React component library — Radix + Tailwind v4",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nxgp/nxgp-component-lib.git"
+  },
+  "homepage": "https://github.com/nxgp/nxgp-component-lib#readme",
+  "bugs": {
+    "url": "https://github.com/nxgp/nxgp-component-lib/issues"
+  },
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": "^22.18.0 || >=24.0.0",
+    "pnpm": ">=9"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run build:js && pnpm run build:css && pnpm run build:openui-assets",
+    "build:js": "tsdown",
+    "build:css": "postcss src/styles/index.css -o dist/styles.css && cp src/styles/tailwind-source.css dist/tailwind-source.css && cp src/assistant/assistant.css dist/assistant.css",
+    "build:openui-assets": "cp src/openui/generated/system-prompt.txt dist/openui/system-prompt.txt && cp src/openui/generated/component-spec.json dist/openui/component-spec.json",
+    "openui:generate": "unrun scripts/generate-openui-prompt.mts",
+    "openui:check": "unrun scripts/check-openui-fixtures.mts",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "lint:architecture": "node scripts/lint-architecture.mjs",
+    "format": "biome format --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:component": "vitest run src/components",
+    "test:storybook-a11y": "test-storybook --url http://127.0.0.1:6006",
+    "verify": "pnpm lint && pnpm lint:architecture && pnpm typecheck && pnpm test:coverage && pnpm build && pnpm build-storybook",
+    "pack:dry": "pnpm build && npm pack --dry-run",
+    "prepare": "lefthook install || true",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "peerDependencies": {
+    "@tiptap/react": ">=3",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "recharts": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "@tiptap/react": {
+      "optional": true
+    },
+    "recharts": {
+      "optional": true
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    },
+    "./table": {
+      "types": "./dist/table/index.d.mts",
+      "import": "./dist/table/index.mjs"
+    },
+    "./charts": {
+      "types": "./dist/charts/index.d.mts",
+      "import": "./dist/charts/index.mjs"
+    },
+    "./icons": {
+      "types": "./dist/icons/index.d.mts",
+      "import": "./dist/icons/index.mjs"
+    },
+    "./editor": {
+      "types": "./dist/editor/index.d.mts",
+      "import": "./dist/editor/index.mjs"
+    },
+    "./forms": {
+      "types": "./dist/forms/index.d.mts",
+      "import": "./dist/forms/index.mjs"
+    },
+    "./overlays": {
+      "types": "./dist/overlays/index.d.mts",
+      "import": "./dist/overlays/index.mjs"
+    },
+    "./client": {
+      "types": "./dist/client.d.mts",
+      "import": "./dist/client.mjs"
+    },
+    "./assistant": {
+      "types": "./dist/assistant/index.d.mts",
+      "import": "./dist/assistant/index.mjs"
+    },
+    "./openui": {
+      "types": "./dist/openui/index.d.mts",
+      "import": "./dist/openui/index.mjs"
+    },
+    "./openui/system-prompt.txt": "./dist/openui/system-prompt.txt",
+    "./openui/component-spec.json": "./dist/openui/component-spec.json",
+    "./assistant.css": "./dist/assistant.css",
+    "./styles.css": "./dist/styles.css",
+    "./tailwind": "./dist/tailwind-source.css"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "@assistant-ui/react": "^0.14.26",
+    "@assistant-ui/react-ai-sdk": "^1.3.40",
+    "@assistant-ui/react-markdown": "^0.14.5",
+    "@openuidev/react-lang": "^0.2.8",
+    "@tanstack/react-table": "^8.21.3",
+    "@tanstack/react-virtual": "^3.14.3",
+    "ai": "^7.0.18",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "date-fns": "^4.4.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "lucide-react": "^1.20.0",
+    "radix-ui": "^1.6.0",
+    "react-day-picker": "9",
+    "react-resizable-panels": "^4.11.2",
+    "remark-gfm": "^4.0.1",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0",
+    "vaul": "^1.1.2",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "@changesets/cli": "^2.31.0",
+    "@storybook/addon-a11y": "^10.4.6",
+    "@storybook/addon-docs": "^10.4.6",
+    "@storybook/addon-mcp": "^0.7.0",
+    "@storybook/react": "^10.4.6",
+    "@storybook/react-vite": "^10.4.6",
+    "@storybook/test-runner": "^0.24.2",
+    "@tailwindcss/postcss": "^4.3.1",
+    "@tailwindcss/vite": "^4.3.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@tiptap/core": "^3.27.1",
+    "@tiptap/extension-image": "^3.27.1",
+    "@tiptap/extension-link": "^3.27.1",
+    "@tiptap/extension-placeholder": "^3.27.1",
+    "@tiptap/extension-table": "^3.27.1",
+    "@tiptap/extension-table-cell": "^3.27.1",
+    "@tiptap/extension-table-header": "^3.27.1",
+    "@tiptap/extension-table-row": "^3.27.1",
+    "@tiptap/react": "^3.27.1",
+    "@tiptap/starter-kit": "^3.27.1",
+    "@types/node": "^25.9.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitest/coverage-v8": "^4.1.9",
+    "concurrently": "^9.2.0",
+    "http-server": "^14.1.1",
+    "jsdom": "^29.1.1",
+    "lefthook": "^2.1.9",
+    "playwright": "^1.55.0",
+    "postcss": "^8.5.15",
+    "postcss-cli": "^11.0.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "recharts": "^3.8.1",
+    "storybook": "^10.4.6",
+    "tailwindcss": "^4.3.1",
+    "tsdown": "^0.22.2",
+    "typescript": "^6.0.3",
+    "unrun": "^0.3.1",
+    "valibot": "^1.4.0",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9",
+    "vitest-axe": "^0.1.0",
+    "wait-on": "^8.0.3"
+  }
+}

@@ -1,0 +1,39 @@
+/**
+ * Semantic tokens — purpose-based names mapped to primitives.
+ * Default values match light-default theme (also applied on :root).
+ */
+:root,
+[data-theme="light-default"] {
+  --app-font-sans: ui-sans-serif, system-ui, sans-serif;
+  --app-font-mono: ui-monospace, monospace;
+  --app-bg: var(--primitive-slate-50);
+  --app-fg: var(--primitive-slate-900);
+  --app-primary: var(--primitive-blue-500);
+  --app-primary-fg: var(--primitive-slate-50);
+  --app-muted: var(--primitive-slate-100);
+  --app-muted-fg: var(--primitive-slate-600);
+  --app-border: var(--primitive-slate-200);
+  --app-ring: var(--primitive-blue-500);
+  --app-destructive: var(--primitive-red-500);
+  --app-destructive-fg: var(--primitive-slate-50);
+  --app-accent: var(--primitive-slate-100);
+  --app-accent-fg: var(--primitive-slate-900);
+  --app-chart-1: var(--primitive-blue-500);
+  --app-chart-2: var(--primitive-teal-500);
+  --app-chart-3: var(--primitive-amber-500);
+  --app-chart-4: var(--primitive-indigo-500);
+  --app-chart-5: var(--primitive-red-500);
+  --app-card: var(--primitive-white);
+  --app-card-fg: var(--app-fg);
+  --app-popover: var(--app-bg);
+  --app-popover-fg: var(--app-fg);
+  --app-canvas: var(--app-bg);
+  --app-surface-1: var(--app-bg);
+  --app-surface-2: var(--app-muted);
+  --app-surface-3: var(--app-card);
+  --app-chrome: var(--app-muted);
+  --app-border-strong: var(--app-border);
+  --app-border-subtle: var(--app-border);
+  --app-duration-fast: 150ms;
+  --app-ease-product: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

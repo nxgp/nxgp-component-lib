@@ -1,0 +1,60 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Docs/Accessibility" />
+
+# Accessibility
+
+Accessibility is a first-class requirement for every `@nxgp/component-lib` component.
+
+## Standards
+
+- **Keyboard** — interactive components support expected keys (Tab, Enter, Space, arrows, Escape).
+- **Focus** — `focus-visible` rings use the semantic `--color-ring` token.
+- **Screen readers** — labels, roles, and live regions follow Radix defaults; decorative icons use `aria-hidden`.
+- **Motion** — respect `prefers-reduced-motion` in animations (Tailwind `motion-safe` / `motion-reduce`).
+
+## Component checklist
+
+When building or extending a component:
+
+1. Provide an accessible name (`aria-label`, visible `<Label>`, or `aria-labelledby`).
+2. Preserve Radix focus trapping in overlays (Dialog, Drawer, Popover menus).
+3. Do not remove focus outlines without a visible replacement.
+4. Add `vitest-axe` coverage in the component test file.
+5. Verify the story passes the Storybook **Accessibility** addon (configured as `error`).
+
+## Testing in your app
+
+```tsx
+import { render } from "@testing-library/react";
+import { axe } from "vitest-axe";
+import { Button } from "@nxgp/component-lib";
+
+it("has no a11y violations", async () => {
+  const { container } = render(<Button type="button">Save</Button>);
+  expect((await axe(container)).violations).toHaveLength(0);
+});
+```
+
+Use `@testing-library/react` queries (`getByRole`, `getByLabelText`) — avoid test IDs for behavior assertions.
+
+## Storybook
+
+The a11y addon runs on every story. Fix violations before merging:
+
+```bash
+pnpm storybook
+```
+
+Open the **Accessibility** panel on each new story.
+
+## Data tables & charts
+
+- **DataTable** — sortable headers expose `aria-sort`; row selection uses labeled checkboxes.
+- **Charts** — provide a text summary or data table alternative for critical metrics; tooltips are pointer-driven — do not rely on color alone.
+
+## Resources
+
+- [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
+- [Radix UI accessibility](https://www.radix-ui.com/primitives/docs/overview/accessibility)
+- Internal reference: `docs/TESTING.md` (required test categories)

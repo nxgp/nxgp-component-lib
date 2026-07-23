@@ -1,0 +1,93 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Docs/Getting Started" />
+
+# Getting Started
+
+`@nxgp/component-lib` is a themeable, accessible React component library built on Radix UI and Tailwind CSS v4.
+
+## Install
+
+```bash
+pnpm add @nxgp/component-lib react react-dom
+```
+
+Peer dependencies: `react` and `react-dom` `>=18`.
+
+Optional integrations used by subpaths:
+
+```bash
+pnpm add @tanstack/react-table @tanstack/react-virtual  # @nxgp/component-lib/table
+pnpm add recharts                                       # @nxgp/component-lib/charts
+pnpm add lucide-react                                   # @nxgp/component-lib/icons (or import lucide directly)
+```
+
+## Styles
+
+Import the compiled stylesheet once at your app root:
+
+```tsx
+import "@nxgp/component-lib/styles.css";
+```
+
+### Tailwind consumers
+
+Extend your Tailwind v4 setup with the library source file:
+
+```css
+@import "tailwindcss";
+@import "@nxgp/component-lib/tailwind";
+```
+
+## Theme provider
+
+Wrap your application with `ThemeProvider` so components pick up semantic tokens and dark mode:
+
+```tsx
+import { ThemeProvider } from "@nxgp/component-lib";
+
+export function App({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider defaultTheme="light-default" enableSystem storageKey="app-theme">
+      {children}
+    </ThemeProvider>
+  );
+}
+```
+
+Built-in themes: `light-default`, `light-warm`, `light-sage`, `dark-default`, `dark-midnight`, `dark-violet`, plus `system`.
+
+## Use components
+
+```tsx
+import { Button, Input, Label } from "@nxgp/component-lib";
+
+export function SignInForm() {
+  return (
+    <form className="grid w-full max-w-sm gap-4 rounded-lg border border-border bg-card p-6">
+      <h1 className="text-lg font-semibold">Sign in</h1>
+      <div className="grid gap-2">
+        <Label htmlFor="email">Email</Label>
+        <Input id="email" type="email" placeholder="you@company.com" />
+      </div>
+      <Button type="submit">Continue</Button>
+    </form>
+  );
+}
+```
+
+## Subpath exports
+
+| Import | Purpose |
+|--------|---------|
+| `@nxgp/component-lib` | Core components + theming utilities |
+| `@nxgp/component-lib/table` | `Table`, `DataTable`, TanStack helpers |
+| `@nxgp/component-lib/charts` | `ChartContainer`, tooltip/legend helpers (compose with Recharts) |
+| `@nxgp/component-lib/icons` | `Icon` wrapper + curated Lucide re-exports |
+| `@nxgp/component-lib/styles.css` | Pre-built CSS bundle |
+| `@nxgp/component-lib/tailwind` | Tailwind v4 token source for app builds |
+
+## Next steps
+
+- [Theme Playground](./?path=/docs/docs-theme-playground--docs) — live-edit tokens and export CSS
+- [Accessibility](./?path=/docs/docs-accessibility--docs) — keyboard, focus, and testing guidance

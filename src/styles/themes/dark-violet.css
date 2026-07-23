@@ -1,0 +1,32 @@
+/**
+ * dark-violet — deep violet surfaces with bright violet primary.
+ * Inspired by modern dev-tool palettes (Vercel, Resend) and Radix violet dark scales.
+ */
+[data-theme="dark-violet"] {
+  --app-bg: var(--primitive-violet-950);
+  --app-fg: oklch(0.96 0.01 290);
+  --app-primary: var(--primitive-violet-400);
+  --app-primary-fg: var(--primitive-violet-950);
+  --app-muted: oklch(0.2 0.035 290);
+  --app-muted-fg: oklch(0.66 0.04 290);
+  --app-border: oklch(0.26 0.04 290);
+  --app-ring: var(--primitive-violet-400);
+  --app-destructive: var(--primitive-red-600);
+  --app-destructive-fg: oklch(0.96 0.01 290);
+  --app-accent: oklch(0.2 0.035 290);
+  --app-accent-fg: oklch(0.96 0.01 290);
+  --app-chart-1: var(--primitive-violet-400);
+  --app-chart-2: var(--primitive-teal-400);
+  --app-chart-3: var(--primitive-amber-500);
+  --app-chart-4: var(--primitive-blue-400);
+  --app-chart-5: var(--primitive-red-500);
+  --app-card: oklch(0.17 0.035 290);
+  --app-popover: oklch(0.15 0.035 290);
+  --app-canvas: oklch(0.11 0.03 290);
+  --app-surface-1: var(--app-bg);
+  --app-surface-2: var(--app-muted);
+  --app-surface-3: var(--app-card);
+  --app-chrome: oklch(0.12 0.035 290);
+  --app-border-strong: oklch(0.31 0.045 290);
+  --app-border-subtle: oklch(0.23 0.04 290);
+}

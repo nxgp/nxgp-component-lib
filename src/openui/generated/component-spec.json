@@ -1,0 +1,665 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "Stack": {
+      "$ref": "#/$defs/Stack"
+    },
+    "Card": {
+      "$ref": "#/$defs/Card"
+    },
+    "Text": {
+      "$ref": "#/$defs/Text"
+    },
+    "Badge": {
+      "$ref": "#/$defs/Badge"
+    },
+    "Alert": {
+      "$ref": "#/$defs/Alert"
+    },
+    "Avatar": {
+      "$ref": "#/$defs/Avatar"
+    },
+    "Metric": {
+      "$ref": "#/$defs/Metric"
+    },
+    "Divider": {
+      "$ref": "#/$defs/Divider"
+    },
+    "Chart": {
+      "$ref": "#/$defs/Chart"
+    },
+    "DataTable": {
+      "$ref": "#/$defs/DataTable"
+    },
+    "Stepper": {
+      "$ref": "#/$defs/Stepper"
+    },
+    "Tabs": {
+      "$ref": "#/$defs/Tabs"
+    },
+    "Form": {
+      "$ref": "#/$defs/Form"
+    },
+    "FormControl": {
+      "$ref": "#/$defs/FormControl"
+    },
+    "Input": {
+      "$ref": "#/$defs/Input"
+    },
+    "TextArea": {
+      "$ref": "#/$defs/TextArea"
+    },
+    "Select": {
+      "$ref": "#/$defs/Select"
+    },
+    "CheckBox": {
+      "$ref": "#/$defs/CheckBox"
+    },
+    "Slider": {
+      "$ref": "#/$defs/Slider"
+    },
+    "DateInput": {
+      "$ref": "#/$defs/DateInput"
+    },
+    "Button": {
+      "$ref": "#/$defs/Button"
+    },
+    "Buttons": {
+      "$ref": "#/$defs/Buttons"
+    }
+  },
+  "required": [
+    "Stack",
+    "Card",
+    "Text",
+    "Badge",
+    "Alert",
+    "Avatar",
+    "Metric",
+    "Divider",
+    "Chart",
+    "DataTable",
+    "Stepper",
+    "Tabs",
+    "Form",
+    "FormControl",
+    "Input",
+    "TextArea",
+    "Select",
+    "CheckBox",
+    "Slider",
+    "DateInput",
+    "Button",
+    "Buttons"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "Stack": {
+      "type": "object",
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["row", "column"]
+        },
+        "gap": {
+          "type": "string",
+          "enum": ["none", "sm", "md", "lg"]
+        },
+        "align": {
+          "type": "string",
+          "enum": ["start", "center", "end", "stretch"]
+        },
+        "justify": {
+          "type": "string",
+          "enum": ["start", "center", "end", "between"]
+        },
+        "wrap": {
+          "type": "boolean"
+        }
+      },
+      "required": ["children"],
+      "additionalProperties": false,
+      "description": "A flexbox layout container. The root of every response must be a Stack. Use direction 'row' + wrap for grids."
+    },
+    "__schema0": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Text"
+        },
+        {
+          "$ref": "#/$defs/Badge"
+        },
+        {
+          "$ref": "#/$defs/Alert"
+        },
+        {
+          "$ref": "#/$defs/Avatar"
+        },
+        {
+          "$ref": "#/$defs/Metric"
+        },
+        {
+          "$ref": "#/$defs/Chart"
+        },
+        {
+          "$ref": "#/$defs/DataTable"
+        },
+        {
+          "$ref": "#/$defs/Stepper"
+        },
+        {
+          "$ref": "#/$defs/Divider"
+        },
+        {
+          "$ref": "#/$defs/Buttons"
+        },
+        {
+          "$ref": "#/$defs/Button"
+        },
+        {
+          "$ref": "#/$defs/Form"
+        },
+        {
+          "$ref": "#/$defs/Card"
+        },
+        {
+          "$ref": "#/$defs/Stack"
+        },
+        {
+          "$ref": "#/$defs/Tabs"
+        }
+      ]
+    },
+    "Text": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["h1", "h2", "h3", "h4", "p", "lead", "large", "small", "muted"]
+        }
+      },
+      "required": ["text"],
+      "additionalProperties": false,
+      "description": "A block of text rendered with a typographic variant (headings, body, captions)."
+    },
+    "Badge": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["default", "secondary", "destructive", "outline"]
+        }
+      },
+      "required": ["text"],
+      "additionalProperties": false,
+      "description": "A small status pill / tag."
+    },
+    "Alert": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["default", "info", "success", "warning", "destructive"]
+        }
+      },
+      "required": ["title"],
+      "additionalProperties": false,
+      "description": "A callout banner with a title, optional description, and severity variant."
+    },
+    "Avatar": {
+      "type": "object",
+      "properties": {
+        "fallback": {
+          "type": "string"
+        },
+        "src": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string",
+          "enum": ["sm", "default", "lg"]
+        }
+      },
+      "required": ["fallback"],
+      "additionalProperties": false,
+      "description": "A person or brand avatar with an image and text fallback."
+    },
+    "Metric": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "delta": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "trend": {
+          "type": "string",
+          "enum": ["up", "down", "flat"]
+        }
+      },
+      "required": ["label", "value"],
+      "additionalProperties": false,
+      "description": "A KPI card showing a label, big value, and optional trend delta."
+    },
+    "Chart": {
+      "type": "object",
+      "properties": {
+        "chartType": {
+          "type": "string",
+          "enum": ["bar", "line", "area"]
+        },
+        "xKey": {
+          "type": "string"
+        },
+        "series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": ["key"],
+            "additionalProperties": false
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": ["chartType", "xKey", "series", "data"],
+      "additionalProperties": false,
+      "description": "A bar, line, or area chart. `data` is an array of row objects; `series` lists the numeric fields to plot; `xKey` is the category field."
+    },
+    "DataTable": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "header": {
+                "type": "string"
+              }
+            },
+            "required": ["key", "header"],
+            "additionalProperties": false
+          }
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          }
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": ["columns", "data"],
+      "additionalProperties": false,
+      "description": "A tabular data grid. `columns` maps row keys to headers; `data` is the rows."
+    },
+    "Stepper": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["id", "label"],
+            "additionalProperties": false
+          }
+        },
+        "value": {
+          "type": "string"
+        },
+        "orientation": {
+          "type": "string",
+          "enum": ["horizontal", "vertical"]
+        }
+      },
+      "required": ["steps"],
+      "additionalProperties": false,
+      "description": "A multi-step progress indicator. `steps` is ordered; `value` is the id of the current step."
+    },
+    "Divider": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false,
+      "description": "A horizontal separator line."
+    },
+    "Buttons": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Button"
+          }
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["row", "column"]
+        }
+      },
+      "required": ["items"],
+      "additionalProperties": false,
+      "description": "A group of Buttons laid out in a row or column."
+    },
+    "Button": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["default", "secondary", "outline", "ghost", "destructive"]
+        }
+      },
+      "required": ["label"],
+      "additionalProperties": false,
+      "description": "A clickable button. Clicking sends `message` (or the label) back to the assistant as the user's intent."
+    },
+    "Form": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "controls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/FormControl"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Button"
+          }
+        }
+      },
+      "required": ["name", "controls"],
+      "additionalProperties": false,
+      "description": "A form container. `controls` are FormControl fields; `actions` are Buttons. Never nest a Form in a Form."
+    },
+    "FormControl": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Input"
+            },
+            {
+              "$ref": "#/$defs/TextArea"
+            },
+            {
+              "$ref": "#/$defs/Select"
+            },
+            {
+              "$ref": "#/$defs/CheckBox"
+            },
+            {
+              "$ref": "#/$defs/Slider"
+            },
+            {
+              "$ref": "#/$defs/DateInput"
+            }
+          ]
+        },
+        "hint": {
+          "type": "string"
+        }
+      },
+      "required": ["label", "field"],
+      "additionalProperties": false,
+      "description": "A labelled form field wrapper. `field` is one Input/TextArea/Select/CheckBox/Slider/DateInput."
+    },
+    "Input": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "inputType": {
+          "type": "string",
+          "enum": ["text", "email", "number", "password", "tel", "url"]
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "A single-line text input. Use inside FormControl."
+    },
+    "TextArea": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "A multi-line text input. Use inside FormControl."
+    },
+    "Select": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": ["value", "label"],
+            "additionalProperties": false
+          }
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "items"],
+      "additionalProperties": false,
+      "description": "A single-choice dropdown. Use inside FormControl."
+    },
+    "CheckBox": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "checked": {
+          "type": "boolean"
+        }
+      },
+      "required": ["name", "label"],
+      "additionalProperties": false,
+      "description": "A single boolean checkbox with an inline label."
+    },
+    "Slider": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "step": {
+          "type": "number"
+        },
+        "value": {
+          "type": "number"
+        }
+      },
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "A numeric range slider. Use inside FormControl."
+    },
+    "DateInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "A date picker. Stores an ISO yyyy-MM-dd string. Use inside FormControl."
+    },
+    "Card": {
+      "type": "object",
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          }
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["children"],
+      "additionalProperties": false,
+      "description": "A bordered card surface. Use for grouped content, list items, and result tiles."
+    },
+    "Tabs": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "content": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/__schema0"
+                }
+              }
+            },
+            "required": ["value", "label", "content"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["items"],
+      "additionalProperties": false,
+      "description": "A tabbed panel. `items` is an array of { value, label, content } where content is an array of blocks."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+/**
+ * Tailwind entry for consuming apps — `@import "@nxgp/component-lib/tailwind"`.
+ * Mirrors theme.tokens.css (no Sonner styles or app base layer).
+ */
+@import "tailwindcss";
+@import "./theme.tokens.css";

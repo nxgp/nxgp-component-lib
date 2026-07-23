@@ -1,0 +1,96 @@
+/**
+ * Shared design tokens — imported by styles.css and tailwind-source.css.
+ * Single source of truth for theme imports and Tailwind @theme mappings.
+ */
+@import "./tokens.primitive.css";
+@import "./tokens.semantic.css";
+@import "./tokens.product.css";
+@import "./themes/light-warm.css";
+@import "./themes/light-sage.css";
+@import "./themes/dark-default.css";
+@import "./themes/dark-midnight.css";
+@import "./themes/dark-violet.css";
+
+@theme inline {
+  --color-background: var(--app-bg);
+  --color-foreground: var(--app-fg);
+  --color-canvas: var(--app-canvas);
+  --color-surface-1: var(--app-surface-1);
+  --color-surface-2: var(--app-surface-2);
+  --color-surface-3: var(--app-surface-3);
+  --color-chrome: var(--app-chrome);
+  --color-primary: var(--app-primary);
+  --color-primary-foreground: var(--app-primary-fg);
+  --color-muted: var(--app-muted);
+  --color-muted-foreground: var(--app-muted-fg);
+  --color-border: var(--app-border);
+  --color-border-strong: var(--app-border-strong);
+  --color-border-subtle: var(--app-border-subtle);
+  --color-ring: var(--app-ring);
+  --color-destructive: var(--app-destructive);
+  --color-destructive-foreground: var(--app-destructive-fg);
+  --color-accent: var(--app-accent);
+  --color-accent-foreground: var(--app-accent-fg);
+  --color-chart-1: var(--app-chart-1);
+  --color-chart-2: var(--app-chart-2);
+  --color-chart-3: var(--app-chart-3);
+  --color-chart-4: var(--app-chart-4);
+  --color-chart-5: var(--app-chart-5);
+  --color-card: var(--app-card);
+  --color-card-foreground: var(--app-card-fg);
+  --color-popover: var(--app-popover);
+  --color-popover-foreground: var(--app-popover-fg);
+  --radius-sm: var(--app-radius-sm);
+  --radius-md: var(--app-radius-md);
+  --radius-lg: var(--app-radius-lg);
+  --radius-inset: var(--app-radius-inset);
+  --radius-overlay: var(--app-radius-overlay);
+  --height-control-xs: var(--app-control-xs);
+  --height-control-sm: var(--app-control-sm);
+  --height-control-md: var(--app-control-md);
+  --height-control-comfortable: var(--app-control-comfortable);
+  --height-control-lg: var(--app-control-lg);
+  --height-table-head-compact: var(--app-table-head-compact);
+  --height-table-head-comfortable: var(--app-table-head-comfortable);
+  --height-demo-shell: var(--app-demo-shell-height);
+  --min-height-textarea: var(--app-textarea-min-h);
+  --min-height-editor-sm: var(--app-editor-min-h-sm);
+  --min-height-editor-md: var(--app-editor-min-h-md);
+  --min-height-editor-lg: var(--app-editor-min-h-lg);
+  --min-width-popover: var(--app-popover-min-w);
+  --min-width-menu: var(--app-menu-min-w);
+  --max-height-drawer: var(--app-drawer-max-h);
+  --max-height-sheet-sm: var(--app-sheet-max-h-sm);
+  --max-height-sheet-md: var(--app-sheet-max-h-md);
+  --max-height-sheet-lg: var(--app-sheet-max-h-lg);
+  --max-height-sheet-xl: var(--app-sheet-max-h-xl);
+  --max-width-dialog-inset: var(--app-dialog-inset-max-w);
+  --max-width-dialog-full: var(--app-dialog-full-max-w);
+  --size-control-xs: var(--app-control-xs);
+  --size-control-sm: var(--app-control-sm);
+  --size-control-md: var(--app-control-md);
+  --size-control-lg: var(--app-control-lg);
+  --size-control-comfortable: var(--app-control-comfortable);
+  --size-icon-xs: var(--app-icon-xs);
+  --size-icon-sm: var(--app-icon-sm);
+  --size-icon-md: var(--app-icon-md);
+  --size-icon-lg: var(--app-icon-lg);
+  --text-meta: var(--app-text-meta);
+  --spacing-cell-x-compact: var(--app-cell-px-compact);
+  --spacing-cell-y-compact: var(--app-cell-py-compact);
+  --spacing-cell-x-comfortable: var(--app-cell-px-comfortable);
+  --spacing-cell-y-comfortable: var(--app-cell-py-comfortable);
+  --spacing-control-px-sm: var(--app-control-px-sm);
+  --spacing-control-px-md: var(--app-control-px-md);
+  --spacing-control-px-lg: var(--app-control-px-lg);
+  --spacing-control-px-xl: var(--app-control-px-xl);
+  --scale-press: var(--app-scale-press);
+  --scale-press-subtle: var(--app-scale-press-subtle);
+  --width-shell-filter: var(--app-shell-filter-width);
+  --duration-fast: var(--app-duration-fast);
+  --ease-product: var(--app-ease-product);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

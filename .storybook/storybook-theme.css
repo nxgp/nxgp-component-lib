@@ -1,0 +1,197 @@
+/**
+ * Storybook docs + canvas chrome mapped to @nxgp/component-lib semantic tokens.
+ * Kit ThemeProvider sets <html data-theme>; Storybook docs theme handles syntax blocks.
+ */
+
+.sb-kit-docs-root,
+.sb-kit-canvas-root,
+.sb-show-main,
+#storybook-root,
+#storybook-docs {
+  background: var(--app-bg) !important;
+  color: var(--app-fg);
+}
+
+/* Docs page shell */
+.sb-kit-docs-root .sbdocs-wrapper,
+.sb-kit-docs-root .sbdocs-content {
+  background: var(--app-bg) !important;
+  color: var(--app-fg) !important;
+}
+
+.sb-kit-docs-root .sbdocs-content h1,
+.sb-kit-docs-root .sbdocs-content h2,
+.sb-kit-docs-root .sbdocs-content h3,
+.sb-kit-docs-root .sbdocs-content h4,
+.sb-kit-docs-root .sbdocs-content h5,
+.sb-kit-docs-root .sbdocs-content h6,
+.sb-kit-docs-root .sbdocs-content p,
+.sb-kit-docs-root .sbdocs-content li,
+.sb-kit-docs-root .sbdocs-content dd,
+.sb-kit-docs-root .sbdocs-content dt,
+.sb-kit-docs-root .sbdocs-content th,
+.sb-kit-docs-root .sbdocs-content td,
+.sb-kit-docs-root .sbdocs-content span,
+.sb-kit-docs-root .sbdocs-content strong {
+  color: inherit;
+}
+
+.sb-kit-docs-root .sbdocs-content a {
+  color: var(--app-primary);
+}
+
+.sb-kit-docs-root .sbdocs-content hr {
+  border-color: var(--app-border);
+}
+
+.sb-kit-docs-root .sbdocs-content table {
+  border-color: var(--app-border);
+}
+
+.sb-kit-docs-root .sbdocs-content thead th {
+  border-color: var(--app-border);
+}
+
+.sb-kit-docs-root .sbdocs-content tbody td {
+  border-color: var(--app-border-subtle);
+}
+
+/* Inline + fenced code */
+.sb-kit-docs-root .sbdocs-content code,
+.sb-kit-docs-root .sbdocs-content :not(pre) > code {
+  background: var(--app-surface-2) !important;
+  color: var(--app-fg) !important;
+  border: 1px solid var(--app-border-subtle);
+}
+
+.sb-kit-docs-root .sbdocs-content pre,
+.sb-kit-docs-root .sbdocs-content pre code {
+  background: var(--app-surface-2) !important;
+  color: var(--app-fg) !important;
+  border: 1px solid var(--app-border);
+}
+
+/* Storybook source / copy blocks */
+.sb-kit-docs-root .docblock-source,
+.sb-kit-docs-root .docblock-source pre,
+.sb-kit-docs-root .docblock-source pre.prismjs,
+.sb-kit-docs-root pre.prismjs,
+.sb-kit-docs-root .prismjs {
+  background: var(--app-surface-2) !important;
+  color: var(--app-fg) !important;
+  border-color: var(--app-border) !important;
+}
+
+.sb-kit-docs-root .docblock-source button,
+.sb-kit-docs-root .docblock-code-toggle,
+.sb-kit-docs-root .docblock-code-toggle span {
+  color: var(--app-muted-fg) !important;
+  background: transparent !important;
+}
+
+.sb-kit-docs-root .docblock-code-toggle:hover {
+  color: var(--app-fg) !important;
+}
+
+/* Controls / props tables */
+.sb-kit-docs-root .docblock-argstable,
+.sb-kit-docs-root .docblock-argstable th,
+.sb-kit-docs-root .docblock-argstable td,
+.sb-kit-docs-root .docblock-argstable span,
+.sb-kit-docs-root .docblock-argstable label {
+  background: var(--app-bg) !important;
+  color: var(--app-fg) !important;
+  border-color: var(--app-border) !important;
+}
+
+.sb-kit-docs-root .docblock-argstable tbody tr:nth-child(odd) {
+  background: var(--app-surface-1) !important;
+}
+
+.sb-kit-docs-root .docblock-argstable input,
+.sb-kit-docs-root .docblock-argstable select,
+.sb-kit-docs-root .docblock-argstable textarea {
+  background: var(--app-surface-2) !important;
+  color: var(--app-fg) !important;
+  border-color: var(--app-border) !important;
+}
+
+/* Story canvas chrome inside docs */
+.sb-kit-docs-root .sbdocs-preview,
+.sb-kit-docs-root .sbdocs-preview > div,
+.sb-kit-docs-root .sb-story,
+.sb-kit-docs-root .os-host,
+.sb-kit-docs-root .os-content {
+  background: var(--app-bg) !important;
+  border-color: var(--app-border) !important;
+}
+
+.sb-kit-docs-root .sbdocs-preview-actions button,
+.sb-kit-docs-root .sbdocs-preview-actions span {
+  color: var(--app-muted-fg) !important;
+}
+
+/* TOC sidebar */
+.sb-kit-docs-root .sbdocs-toc--custom,
+.sb-kit-docs-root .sbdocs-toc--custom a {
+  color: var(--app-muted-fg) !important;
+}
+
+.sb-kit-docs-root .sbdocs-toc--custom a:hover,
+.sb-kit-docs-root .sbdocs-toc--custom a[data-active="true"] {
+  color: var(--app-fg) !important;
+}
+
+/* Expandable sections */
+.sb-kit-docs-root .sbdocs-expandable,
+.sb-kit-docs-root .sbdocs-expandable span {
+  color: var(--app-fg) !important;
+}
+
+/* Empty / skeleton blocks */
+.sb-kit-docs-root .docblock-emptyblock {
+  background: var(--app-surface-1) !important;
+  color: var(--app-muted-fg) !important;
+  border-color: var(--app-border) !important;
+}
+
+/* Dark mode: ensure Storybook prism tokens stay readable on kit surfaces */
+.dark .sb-kit-docs-root .token.comment,
+.dark .sb-kit-docs-root .token.prolog,
+.dark .sb-kit-docs-root .token.doctype,
+.dark .sb-kit-docs-root .token.cdata {
+  color: var(--app-muted-fg);
+}
+
+.dark .sb-kit-docs-root .token.punctuation,
+.dark .sb-kit-docs-root .token.operator,
+.dark .sb-kit-docs-root .token.entity,
+.dark .sb-kit-docs-root .token.url {
+  color: var(--app-fg);
+}
+
+.dark .sb-kit-docs-root .token.property,
+.dark .sb-kit-docs-root .token.tag,
+.dark .sb-kit-docs-root .token.boolean,
+.dark .sb-kit-docs-root .token.number,
+.dark .sb-kit-docs-root .token.constant,
+.dark .sb-kit-docs-root .token.symbol {
+  color: var(--app-chart-2);
+}
+
+.dark .sb-kit-docs-root .token.selector,
+.dark .sb-kit-docs-root .token.attr-name,
+.dark .sb-kit-docs-root .token.string,
+.dark .sb-kit-docs-root .token.char,
+.dark .sb-kit-docs-root .token.builtin {
+  color: var(--app-chart-3);
+}
+
+.dark .sb-kit-docs-root .token.function,
+.dark .sb-kit-docs-root .token.class-name {
+  color: var(--app-chart-1);
+}
+
+.dark .sb-kit-docs-root .token.keyword {
+  color: var(--app-chart-4);
+}

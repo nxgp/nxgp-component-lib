@@ -1,0 +1,49 @@
+/**
+ * Primitive tokens — raw OKLCH palette.
+ * NEVER reference these in component TSX or semantic CSS.
+ * Components consume semantic tokens (--app-*) or Tailwind utilities only.
+ */
+:root {
+  --primitive-white: oklch(1 0 0);
+  --primitive-slate-50: oklch(0.99 0.003 247);
+  --primitive-slate-100: oklch(0.96 0.006 247);
+  --primitive-slate-200: oklch(0.91 0.01 250);
+  --primitive-slate-400: oklch(0.65 0.03 265);
+  --primitive-slate-600: oklch(0.45 0.03 265);
+  --primitive-slate-900: oklch(0.14 0.04 265);
+  --primitive-slate-950: oklch(0.1 0.04 265);
+
+  --primitive-blue-500: oklch(0.55 0.2 250);
+  --primitive-blue-600: oklch(0.48 0.2 250);
+  --primitive-blue-400: oklch(0.65 0.18 250);
+
+  --primitive-amber-500: oklch(0.75 0.15 75);
+  --primitive-amber-600: oklch(0.65 0.14 70);
+
+  --primitive-red-500: oklch(0.58 0.22 25);
+  --primitive-red-600: oklch(0.5 0.22 25);
+
+  --primitive-indigo-400: oklch(0.62 0.2 275);
+  --primitive-indigo-500: oklch(0.52 0.22 275);
+  --primitive-indigo-950: oklch(0.12 0.05 275);
+
+  --primitive-teal-400: oklch(0.72 0.14 180);
+  --primitive-teal-500: oklch(0.62 0.14 180);
+
+  /* Sage ramp — light-sage neutrals */
+  --primitive-sage-50: oklch(0.98 0.008 155);
+  --primitive-sage-100: oklch(0.95 0.015 155);
+  --primitive-sage-200: oklch(0.91 0.02 155);
+  --primitive-sage-600: oklch(0.48 0.04 155);
+  --primitive-sage-900: oklch(0.22 0.04 155);
+
+  /* Emerald ramp — light-sage primary */
+  --primitive-emerald-400: oklch(0.72 0.15 160);
+  --primitive-emerald-500: oklch(0.62 0.16 158);
+  --primitive-emerald-600: oklch(0.52 0.14 158);
+
+  /* Violet ramp — dark-violet surfaces and primary */
+  --primitive-violet-400: oklch(0.68 0.19 290);
+  --primitive-violet-500: oklch(0.58 0.22 290);
+  --primitive-violet-950: oklch(0.13 0.04 290);
+}

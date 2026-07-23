@@ -1,0 +1,34 @@
+/**
+ * light-sage — calm sage neutrals with emerald primary.
+ * Inspired by Radix sage/mint scales used in modern productivity and health UIs.
+ */
+[data-theme="light-sage"] {
+  --app-bg: var(--primitive-sage-50);
+  --app-fg: var(--primitive-sage-900);
+  --app-primary: var(--primitive-emerald-600);
+  --app-primary-fg: var(--primitive-sage-50);
+  --app-muted: var(--primitive-sage-100);
+  --app-muted-fg: var(--primitive-sage-600);
+  --app-border: var(--primitive-sage-200);
+  --app-ring: var(--primitive-emerald-500);
+  --app-destructive: var(--primitive-red-500);
+  --app-destructive-fg: var(--primitive-sage-50);
+  --app-accent: var(--primitive-sage-100);
+  --app-accent-fg: var(--primitive-sage-900);
+  --app-chart-1: var(--primitive-emerald-500);
+  --app-chart-2: var(--primitive-teal-500);
+  --app-chart-3: var(--primitive-amber-500);
+  --app-chart-4: var(--primitive-blue-500);
+  --app-chart-5: var(--primitive-indigo-500);
+  --app-card: var(--primitive-white);
+  --app-card-fg: var(--app-fg);
+  --app-popover: var(--app-bg);
+  --app-popover-fg: var(--app-fg);
+  --app-canvas: oklch(0.97 0.012 155);
+  --app-surface-1: var(--app-bg);
+  --app-surface-2: var(--app-muted);
+  --app-surface-3: var(--app-card);
+  --app-chrome: var(--app-muted);
+  --app-border-strong: var(--app-border);
+  --app-border-subtle: var(--app-border);
+}

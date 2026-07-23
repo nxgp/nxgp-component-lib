@@ -1,0 +1,18 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { ThemePlayground } from "./components/theme-playground";
+
+<Meta title="Docs/Theme Playground" />
+
+# Theme Playground
+
+Theme panel on the left, live component preview on the right. Adjust appearance, accent, radius, scaling, and tokens — then copy your theme.
+
+<div className="not-prose -mx-4 w-[calc(100%+2rem)] max-w-none sm:-mx-6 sm:w-[calc(100%+3rem)]">
+  <ThemePlayground />
+</div>
+
+## Use the export
+
+1. Click **Copy Theme** and save as `src/styles/my-theme.css`.
+2. Import after `@nxgp/component-lib/styles.css`.
+3. Set `defaultTheme="my-theme"` on `ThemeProvider`.

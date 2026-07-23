@@ -1,0 +1,37 @@
+export {
+  Sidebar,
+  SidebarContent,
+  type SidebarContentProps,
+  SidebarFooter,
+  type SidebarFooterProps,
+  SidebarHeader,
+  type SidebarHeaderProps,
+  SidebarInset,
+  type SidebarInsetProps,
+  type SidebarProps,
+  SidebarProvider,
+  type SidebarProviderProps,
+  SidebarRail,
+  type SidebarRailProps,
+  SidebarTrigger,
+  type SidebarTriggerProps,
+  useSidebar,
+} from "./sidebar";
+export {
+  SidebarGroup,
+  SidebarGroupLabel,
+  type SidebarGroupLabelProps,
+  type SidebarGroupProps,
+  SidebarMenu,
+  SidebarMenuBadge,
+  type SidebarMenuBadgeProps,
+  SidebarMenuButton,
+  type SidebarMenuButtonProps,
+  SidebarMenuItem,
+  type SidebarMenuItemProps,
+  type SidebarMenuProps,
+} from "./sidebar-menu";
+export {
+  type SidebarMenuButtonVariantProps,
+  sidebarMenuButtonVariants,
+} from "./sidebar-menu.variants";

@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Architecture lint
+        run: pnpm lint:architecture
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test with coverage
+        run: pnpm test:coverage
+
+      - name: Build
+        run: pnpm build
+
+      - name: Build Storybook
+        run: pnpm build-storybook
+
+      - name: Install Playwright
+        run: pnpm exec playwright install chromium --with-deps
+
+      - name: Storybook accessibility
+        run: |
+          pnpm exec concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpm exec http-server storybook-static -p 6006 -s" \
+            "pnpm exec wait-on tcp:6006 && pnpm test:storybook-a11y"
+
+      - name: Verify package contents
+        run: pnpm pack:dry
