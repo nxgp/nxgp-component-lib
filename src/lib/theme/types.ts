@@ -9,6 +9,7 @@ export type ThemeId =
   | "light-default"
   | "light-warm"
   | "light-sage"
+  | "kiotel-theme"
   | "dark-default"
   | "dark-midnight"
   | "dark-violet";

@@ -226,6 +226,7 @@ export type ThemePreset = {
 
 /** Built-in themes consumers can load as a starting point. */
 export const THEME_PRESETS: ThemePreset[] = [
+  { id: "kiotel-theme", label: "Kiotel", description: "Kiotel product light palette" },
   { id: "light-default", label: "Light", description: "Default light palette" },
   { id: "light-warm", label: "Warm", description: "Warm accent light theme" },
   { id: "light-sage", label: "Sage", description: "Calm sage neutrals with emerald accent" },
@@ -350,7 +351,7 @@ export const QUICK_COLOR_KEYS: ThemeTokenKey[] = [
 
 /** Appearance presets for the Light/Dark segmented control. */
 export const APPEARANCE_PRESETS = [
-  { id: "light-default", label: "Light" },
+  { id: "kiotel-theme", label: "Light" },
   { id: "dark-default", label: "Dark" },
 ] as const;
 

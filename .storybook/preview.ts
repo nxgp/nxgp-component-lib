@@ -8,14 +8,17 @@ import "./storybook-theme.css";
 
 const preview: Preview = {
   decorators: [withThemeProvider],
+  initialGlobals: {
+    theme: "kiotel-theme",
+  },
   globalTypes: {
     theme: {
       name: "Theme",
       description: "Active color theme",
-      defaultValue: "light-default",
       toolbar: {
         icon: "paintbrush",
         items: [
+          { value: "kiotel-theme", title: "Kiotel" },
           { value: "light-default", title: "Light Default" },
           { value: "light-warm", title: "Light Warm" },
           { value: "light-sage", title: "Light Sage" },

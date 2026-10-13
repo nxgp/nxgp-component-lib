@@ -130,7 +130,7 @@ describe("ThemeProvider", () => {
   });
 
   describe("system preference", () => {
-    it("resolves system to light-default when prefers light", async () => {
+    it("resolves system to kiotel-theme when prefers light", async () => {
       vi.spyOn(window, "matchMedia").mockImplementation((query: string) => ({
         matches: false,
         media: query,
@@ -147,7 +147,7 @@ describe("ThemeProvider", () => {
           <ThemeConsumer />
         </ThemeProvider>,
       );
-      expect(await screen.findByTestId("resolved-theme")).toHaveTextContent("light-default");
+      expect(await screen.findByTestId("resolved-theme")).toHaveTextContent("kiotel-theme");
     });
 
     it("resolves system to dark-default when prefers dark", async () => {
@@ -192,7 +192,7 @@ describe("ThemeProvider", () => {
           <ThemeConsumer />
         </ThemeProvider>,
       );
-      expect(await screen.findByTestId("resolved-theme")).toHaveTextContent("light-default");
+      expect(await screen.findByTestId("resolved-theme")).toHaveTextContent("kiotel-theme");
 
       changeHandler?.({ matches: true } as MediaQueryListEvent);
       await waitFor(() => {

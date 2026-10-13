@@ -40,7 +40,7 @@ export function ThemePlayground({
   const [accentId, setAccentId] = useState<string | null>(null);
   const [radius, setRadius] = useState<RadiusOptionId>(DEFAULT_RADIUS_ID);
   const [scaling, setScaling] = useState(DEFAULT_SCALING);
-  const [activePresetId, setActivePresetId] = useState<string | null>(null);
+  const [activePresetId, setActivePresetId] = useState<string | null>("kiotel-theme");
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export function ThemePlayground({
     );
 
     const mode = getThemeMode(resolvedTheme);
-    setAppearance(mode === "dark" ? "dark-default" : "light-default");
+    setAppearance(mode === "dark" ? "dark-default" : "kiotel-theme");
   }, [resolvedTheme]);
 
   const previewStyle = useMemo(() => {
@@ -142,7 +142,7 @@ export function ThemePlayground({
     setRadius(DEFAULT_RADIUS_ID);
     setScaling(DEFAULT_SCALING);
     const mode = getThemeMode(resolvedTheme);
-    setAppearance(mode === "dark" ? "dark-default" : "light-default");
+    setAppearance(mode === "dark" ? "dark-default" : "kiotel-theme");
   };
 
   const copyCss = async () => {

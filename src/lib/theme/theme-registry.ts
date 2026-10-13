@@ -8,17 +8,18 @@ export const THEMES: readonly ThemeDefinition[] = [
   { id: "light-default", label: "Light Default", mode: "light" },
   { id: "light-warm", label: "Light Warm", mode: "light" },
   { id: "light-sage", label: "Light Sage", mode: "light" },
+  { id: "kiotel-theme", label: "Kiotel", mode: "light" },
   { id: "dark-default", label: "Dark Default", mode: "dark" },
   { id: "dark-midnight", label: "Dark Midnight", mode: "dark" },
   { id: "dark-violet", label: "Dark Violet", mode: "dark" },
 ] as const;
 
 /** Default theme when no preference is stored. */
-export const DEFAULT_THEME_ID: ThemeId = "light-default";
+export const DEFAULT_THEME_ID: ThemeId = "kiotel-theme";
 
 /** Resolves system preference to a concrete theme id. */
 export function resolveSystemThemeId(prefersDark: boolean): ThemeId {
-  return prefersDark ? "dark-default" : "light-default";
+  return prefersDark ? "dark-default" : "kiotel-theme";
 }
 
 /** Returns the theme definition for a given id. */

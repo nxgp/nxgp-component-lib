@@ -26,7 +26,7 @@ export function resolveStorybookTheme(globals: Record<string, unknown>): ThemeSe
   if (typeof value === "string") {
     return value as ThemeSetting;
   }
-  return "light-default";
+  return "kiotel-theme";
 }
 
 const globalsListeners = new Set<() => void>();

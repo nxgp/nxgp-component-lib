@@ -20,6 +20,7 @@ describe("buildThemeCss", () => {
     const presetIds = THEME_PRESETS.map((preset) => preset.id);
     expect(presetIds).toContain("light-sage");
     expect(presetIds).toContain("dark-violet");
-    expect(presetIds).toHaveLength(6);
+    expect(presetIds).toContain("kiotel-theme");
+    expect(presetIds).toHaveLength(7);
   });
 });

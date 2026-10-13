@@ -1,0 +1,50 @@
+[data-theme="kiotel-theme"] {
+  /* Base: page background and default text */
+  --app-bg: #f4f8fb; /* page canvas (beige) */
+  --app-fg: #17120b; /* default text */
+
+  /* Primary: main CTAs (e.g. Record button), active states */
+  --app-primary: #2e689e;
+  --app-primary-fg: #ffffff; /* text/icons on primary */
+
+  /* Muted: secondary backgrounds (badges, chips) and secondary text */
+  --app-muted: #ecebea;
+  --app-muted-fg: #2b2927; /* meta text: time, duration, "100 records" */
+
+  /* Borders and focus */
+  --app-border: #ecebea; /* cards, buttons, inputs */
+  --app-ring: #2e689e; /* focus ring */
+
+  /* Destructive: delete actions, errors */
+  --app-destructive: #d03535;
+  --app-destructive-fg: #ffffff;
+
+  /* Accent: hover/selected highlight on neutral items */
+  --app-accent: #eff5fa;
+  --app-accent-fg: #17120b;
+
+  /* Charts: categorical series, use in order 1 to 5.*/
+  --app-chart-1: #468bca;
+  --app-chart-2: #122a40;
+  --app-chart-3: #f1ecda;
+  --app-chart-4: #f7e56a;
+  --app-chart-5: #2b2927;
+
+  /* Layout surfaces */
+  --app-canvas: var(--app-bg); /* outermost app background, behind sidebar */
+  --app-surface-1: #eff5fa; /* main content panel (rounded area beside sidebar) */
+  --app-surface-2: var(--app-muted); /* nested/secondary panels */
+  --app-surface-3: var(--app-card); /* raised surfaces on top of surface-1 */
+  --app-chrome: var(--app-muted); /* toolbars, headers, app shell */
+
+  /* Border weights: currently identical, split later if the design needs it */
+  --app-border-strong: #2b2927; /* dividers needing emphasis */
+  --app-border-subtle: var(--app-border); /* faint separators */
+
+  /* Cards: list items, dialogs, popovers */
+  --app-card: var(--primitive-white);
+  --app-card-fg: var(--app-fg);
+
+  --app-popover: #ffffff;
+  --app-popover-fg: #17120b;
+}
